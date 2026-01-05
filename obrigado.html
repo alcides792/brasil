@@ -11,13 +11,24 @@
     
     <title>Sucesso | PRIVATE</title>
 
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('auth') !== 'venda_confirmada_9921') {
-          window.location.href = 'index.html';
-      }
-    </script>
+   <script>
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const auth = urlParams.get('auth');
+    
+    // 1. Se NÃO tiver a chave certa, expulsa na hora
+    if (auth !== 'venda_confirmada_9921') {
+        window.location.href = 'index.html';
+        return;
+    }
 
+    // 2. Apaga a chave da barra de endereços para ninguém copiar
+    if (window.history.replaceState) {
+        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+    }
+  })();
+</script>
     <style> ... </style>
 </head>
 <body>
