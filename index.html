@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilo1.css">
+    
     <style>
         :root {
             --bg: #000000;
@@ -90,6 +90,16 @@
         @media (max-width: 768px) {
             .glass-frame { width: 220px !important; height: 320px !important; }
         }
+        /* Desativar seleção e menu de contexto visual */
+img, video {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Chrome/Opera */
+    -webkit-tap-highlight-color: transparent;
+}
     </style>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -240,6 +250,20 @@
             freeMode: true
         });
     </script>
-   
+   <script>
+    // Bloqueia o menu de contexto (clique direito ou pressionar longo)
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    }, false);
+
+    // Impede o "drag and drop" (arrastar a imagem)
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    }, false);
+</script>
 </body>
 </html>
