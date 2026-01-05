@@ -96,6 +96,16 @@
             .swiper-slide { width: 280px; }
             .footer-details { flex-direction: column; gap: 40px; }
         }
+        /* Desativar seleção e menu de contexto visual */
+img, video {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Chrome/Opera */
+    -webkit-tap-highlight-color: transparent;
+}
     </style>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -215,5 +225,20 @@
         });
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+    // Bloqueia o menu de contexto (clique direito ou pressionar longo)
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    }, false);
+
+    // Impede o "drag and drop" (arrastar a imagem)
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+        }
+    }, false);
+</script>
 </body>
 </html>
