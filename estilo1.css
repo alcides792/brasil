@@ -80,4 +80,15 @@
             height: 14px;
             color: #ffffff; /* Cor do check */
             flex-shrink: 0;
-        }
+        } 
+
+/* Desativar seleção e menu de contexto visual */
+img, video {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Chrome/Opera */
+    -webkit-tap-highlight-color: transparent;
+}
