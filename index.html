@@ -8,21 +8,8 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-  (function() {
-    // Lista de páginas permitidas para acessar o VIP
-    const origensPermitidas = ['paginadepacotes.html', 'paginadepacotes', 'checkout'];
-    
-    // Verifica se a página anterior (referrer) contém alguma das origens permitidas
-    const veioDeOnde = document.referrer;
-    const acessoValido = origensPermitidas.some(link => veioDeOnde.includes(link));
-
-    // Se não veio de uma origem permitida, manda de volta para a home
-    if (!acessoValido) {
-      window.location.href = 'index.html';
-    }
-  })();
-</script>
+ 
+  
     <style>
         :root {
             --bg: #000000;
