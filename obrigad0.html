@@ -3,7 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PRIVATE | SUCESSO</title>
-    
+    <script>
+  // Verifica se o código secreto está na URL
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('auth') !== 'venda_confirmada_9921') {
+      // Se não tiver o código, manda o curioso para a Home
+      window.location.href = 'index.html';
+  }
+</script>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
